@@ -1,0 +1,17 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: pocket
+nodes:
+  - role: control-plane
+    kubeadmConfigPatches:
+      - |
+        kind: InitConfiguration
+        nodeRegistration:
+          kubeletExtraArgs:
+            # garde-fous mémoire/CPU
+            system-reserved: "cpu=200m,memory=512Mi"
+            kube-reserved:   "cpu=200m,memory=512Mi"
+    extraPortMappings:
+      - containerPort: 80  # futur ingress
+        hostPort: 8080
+        protocol: TCP
