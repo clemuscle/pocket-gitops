@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/<TON-UTILISATEUR>/pocket-gitops   # ➜ adapte
+    repoURL: https://github.com/clemuscle/pocket-gitops
     targetRevision: main
     path: clusters/pocket/base
   destination:
