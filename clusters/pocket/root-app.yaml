@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/clemuscle/pocket-gitops
-    targetRevision: main
+    repoURL: git@github.com:clemuscle/pocket-gitops.git
+    targetRevision: master
     path: clusters/pocket/base
   destination:
     server: https://kubernetes.default.svc
