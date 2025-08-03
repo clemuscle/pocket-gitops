@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ./monitoring
-  - ./security/gatekeeper
-  - ./ingress
-  - ./rollouts
-  - ./apps/demo/k8s
+  - ../../../infrastructure/monitoring
+  - ../../../infrastructure/ingress
+  - ../../../infrastructure/security/gatekeeper
+  - ../../../rollouts
+  - ../../../apps/demo/k8s

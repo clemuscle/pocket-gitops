@@ -1,8 +1,0 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: gatekeeper
-  namespace: argocd
-spec:
-  url: https://open-policy-agent.github.io/gatekeeper/charts
-  interval: 1h

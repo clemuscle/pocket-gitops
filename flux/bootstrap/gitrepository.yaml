@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: pocket-gitops
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: ssh://git@github.com/clemuscle/pocket-gitops.git   # URL SSH
+  ref: {branch: master}
+  secretRef: {name: git-creds}
