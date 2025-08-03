@@ -11,4 +11,4 @@ spec:
   values:
     controller:
       replicaCount: 1
-      resources: {requests: {memory: 50Mi}, limits: {memory: 100Mi}}
+      resources: {requests: {cpu: 50m, memory: 90Mi}, limits: {memory: 180Mi}}
