@@ -11,4 +11,6 @@ spec:
   values:
     controller:
       replicaCount: 1
+      service:
+        type: NodePort
       resources: {requests: {cpu: 50m, memory: 90Mi}, limits: {memory: 180Mi}}
