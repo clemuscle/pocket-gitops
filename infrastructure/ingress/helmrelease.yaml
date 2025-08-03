@@ -15,10 +15,15 @@ spec:
         namespace: flux-system
 
   install:
-    wait: false
-    timeout: 10m        # facultatif mais pratique en labo
+    remediation:
+      disableWait: true      # ← c’est ICI maintenant
+      retries: 1             #   (optionnel)
+    timeout: 10m
+
   upgrade:
-    wait: false
+    remediation:
+      disableWait: true
+      retries: 1
     timeout: 10m
 
   values:
