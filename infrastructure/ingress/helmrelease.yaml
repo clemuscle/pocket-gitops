@@ -27,6 +27,8 @@ spec:
         type: NodePort
       admissionWebhooks:
         enabled: false
+        patch:
+          enabled: false
       replicaCount: 1
       resources:
         requests:
