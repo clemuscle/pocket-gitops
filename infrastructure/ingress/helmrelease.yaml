@@ -24,7 +24,9 @@ spec:
   values:
     controller:
       service:
-        type: NodePort    # on force NodePort pour Minikube
+        type: NodePort
+      admissionWebhooks:
+        enabled: false
       replicaCount: 1
       resources:
         requests:
