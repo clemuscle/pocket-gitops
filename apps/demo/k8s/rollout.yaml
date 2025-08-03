@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
         - name: demo
-          image: ghcr.io/clemuscle/demo:latest
+          image: ghcr.io/clemuscle/pocket-demo:latest
           imagePullPolicy: IfNotPresent
           ports: [{containerPort: 8000}]
   strategy:
