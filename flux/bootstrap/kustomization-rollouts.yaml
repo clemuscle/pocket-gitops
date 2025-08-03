@@ -4,7 +4,7 @@ metadata:
   name: pocket-rollouts
   namespace: flux-system
 spec:
-  interval: 10m
+  interval: 1m
   path: ./rollouts           # ← dossier contenant helmrepositories.yaml, *.hr.yaml
   prune: true
   sourceRef: {kind: GitRepository, name: pocket-gitops}
