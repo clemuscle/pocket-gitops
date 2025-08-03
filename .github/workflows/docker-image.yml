@@ -36,7 +36,7 @@ jobs:
       - name: Build & push
         uses: docker/build-push-action@v5
         with:
-          context: ./apps/demo/app
+          context: ./apps/demo
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/pocket-demo:latest
