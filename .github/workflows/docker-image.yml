@@ -1,0 +1,45 @@
+name: Build & Push demo image
+
+on:
+  push:
+    branches: [ master ]        # déclenchement à chaque push sur master
+    paths:                      # ne build que si ces chemins changent
+      - 'apps/demo/app/**'
+      - '.github/workflows/docker-image.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write           # permet de pousser sur ghcr.io
+
+    steps:
+      # 1. Checkout code
+      - uses: actions/checkout@v4
+
+      # 2. Déterminer le tag (commit court + latest)
+      - id: vars
+        run: |
+          echo "sha_short=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
+      # 3. Connexion à ghcr.io
+      - name: Login to ghcr.io
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # 4. Build + push
+      - name: Build & push
+        uses: docker/build-push-action@v5
+        with:
+          context: ./apps/demo/app
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/pocket-demo:latest
+            ghcr.io/${{ github.repository_owner }}/pocket-demo:${{ steps.vars.outputs.sha_short }}
+          labels: |
+            org.opencontainers.image.source=${{ github.repositoryUrl }}
