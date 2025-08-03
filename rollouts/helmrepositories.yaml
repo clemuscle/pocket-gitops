@@ -6,4 +6,4 @@ spec: {url: https://argoproj.github.io/argo-helm, interval: 1h}
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata: {name: flagger, namespace: flux-system}
-spec: {url: https://fluxcd-community.github.io/flagger-helm, interval: 1h}
+spec: {url: https://flagger.app , interval: 1h}
