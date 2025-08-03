@@ -15,7 +15,7 @@ spec:
         namespace: flux-system
 
   install:
-    Wait: false
+    wait: false
     timeout: 10m        # facultatif mais pratique en labo
   upgrade:
     wait: false
