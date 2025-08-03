@@ -3,4 +3,9 @@ __pycache__/
 cosign.*
 *.kubeconfig
 .docker
-*argocd
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.tmp
+*.log
